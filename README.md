@@ -1,7 +1,7 @@
 # **FANz.ai Project**
 
 ## **Objective:**
-Develop the next version of Blinx with AI based recommendation system that browses all the available content and shows the best performing content.
+Developing a infortainment content platform with AI based recommendation system that browses all the available content and shows the best performing content.
 
 ## **Content:**
 - **Health:**
