@@ -1,38 +1,59 @@
-.App {
-  text-align: center;
+#root {
+  text-size-adjust: 100%;
+  letter-spacing: normal;
+  background-color: black;
+  margin: 0 auto;
+  width: 100%;
+}
+* {
+  box-sizing: border-box;
+}
+.navbar {
+  background-color: transparent;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navbar.colorChange {
+  background: #000;
+}
+.navbar.gradient-back {
+  background: linear-gradient(
+    to right,
+    #000000 14%,
+    rgb(123, 81, 129, 0.7) 42%
+  );
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.headerItem {
+  color: #ffffff;
+}
+.headerItem:hover {
+  color: #ffffff !important;
+  opacity: 1 !important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.headerItemDot {
+  position: relative;
+  opacity: 0.9;
 }
 
-.App-link {
-  color: #61dafb;
+.headerItemDot::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: #41b5c5;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.headerItemDot:hover::after,
+.headerItemDot.active::after {
+  height: 10px !important;
+  width: 10px !important;
+  border-radius: 20px !important;
+  background: #41b5c5 !important;
+  opacity: 1 !important;
 }

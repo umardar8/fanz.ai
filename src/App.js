@@ -1,11 +1,14 @@
 import "./App.css";
 import WebRoutes from "./config/web-routes";
+import { ChakraProvider } from "@chakra-ui/react";
 
 function App() {
   return (
-    <div className="App">
+    <ChakraProvider>
+      {/* <div className="App"> */}
       <WebRoutes />
-    </div>
+      {/* </div> */}
+    </ChakraProvider>
   );
 }
 
