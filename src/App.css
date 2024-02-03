@@ -58,8 +58,10 @@
   opacity: 1 !important;
 }
 
-
-
+.headerItem.active {
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
 
 
 
@@ -376,5 +378,6 @@
   }
   
   
-  
-  
+
+
+
