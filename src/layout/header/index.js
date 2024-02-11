@@ -154,6 +154,26 @@ export default function WebHeader() {
             </Nav>
           </Container>
         </Navbar>
+        {/* header News */}
+        <div
+          className="text-center py-2 py-md-1 d-none d-md-block"
+          style={{
+            maxHeight: "5vh",
+            background: `rgb(0, 0, 0, 0.5)`,
+            color: "yellow",
+            overflow: "hidden",
+          }}
+        >
+          <h5
+            style={{
+              animation: `move 15s infinite linear`,
+              whiteSpace: "nowrap",
+            }}
+          >
+            Breaking New's! Lorem Ipsum is simply dummy text of the printing and
+            typesetting industry.
+          </h5>
+        </div>
         <Navbar
           bg="dark"
           data-bs-theme="dark"
@@ -209,6 +229,28 @@ export default function WebHeader() {
             </Navbar.Collapse>
           </Container>
         </Navbar>
+
+        {/* header News */}
+        <div
+          className="row text-center py-2 py-md-1 d-block d-md-none justify-self-center mx-3"
+          style={{
+            maxHeight: "5vh",
+            background: `rgb(0, 0, 0, 0.5)`,
+            color: "yellow",
+            overflow: "hidden",
+            marginTop: -15,
+          }}
+        >
+          <h5
+            style={{
+              animation: `move 10s infinite linear`,
+              whiteSpace: "nowrap", // Prevent line breaks
+            }}
+          >
+            Breaking New's! Lorem Ipsum is simply dummy text of the printing and
+            typesetting industry.
+          </h5>
+        </div>
       </div>
     </>
   );

@@ -2,6 +2,7 @@ import { Layout } from "antd";
 import React from "react";
 import WebHeader from "../header";
 import BaseColors from "../../constant";
+import WebFooter from "../footer";
 
 const { Header, Footer, Content } = Layout;
 export default function WebLayout(props) {
@@ -13,10 +14,9 @@ export default function WebLayout(props) {
           margin: 0,
           padding: 0,
           width: "auto",
-          height: "auto",
           backgroundColor: "transparent",
         }}
-        className="position-sticky fixed-top"
+        className="position-fixed fixed-top"
       >
         <WebHeader />
       </Header>
@@ -41,7 +41,7 @@ export default function WebLayout(props) {
           backgroundColor: "transparent",
         }}
       >
-        footer
+        <WebFooter />
       </Footer>
     </Layout>
   );
