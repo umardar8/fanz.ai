@@ -3,7 +3,16 @@ import { Button } from "@chakra-ui/react";
 import BaseColors from "../../constant";
 
 export default function PrimaryButton(props) {
-  const { btnStyle, background, rightIcon, variant, label } = props;
+  const {
+    btnStyle,
+    background,
+    rightIcon,
+    variant,
+    label,
+    fontSize,
+    marginRight,
+    padding,
+  } = props;
 
   return (
     <Button
@@ -15,6 +24,10 @@ export default function PrimaryButton(props) {
               color: BaseColors.white,
               minWidth: "120px",
               borderRadius: 25,
+              fontFamily: `"Montserrat", sans-serif`,
+              fontSize: fontSize ? fontSize : `1rem`,
+              marginRight: marginRight ? marginRight : "none",
+              padding: padding ? padding : "auto",
             }
       }
       rightIcon={rightIcon}
