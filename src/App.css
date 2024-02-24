@@ -1,7 +1,7 @@
 #root {
   text-size-adjust: 100%;
   letter-spacing: normal;
-  background-color: black;
+  background-color: black !important;
   margin: 0 auto;
   width: 100%;
 }
@@ -63,27 +63,10 @@
   opacity: 1 !important;
 }
 
-.tcard-con {
-  display: flex;
-  gap: 22px;
-  padding: 0 3rem;
-}
-.tcard {
-  width: 23%;
-}
-.tcard img {
-  width: 100%;
-}
-.tcard-rat {
-  display: flex;
-  justify-content: space-between;
-}
-.tc-rating {
-  display: flex;
-  align-items: baseline;
-  gap: 10px;
-}
-.tc-fav {
+/* shadow */
+
+.shadow-1 {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 /* footer */
 
@@ -383,6 +366,12 @@
 .text-2 {
   font-size: 1.6rem;
   font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+}
+
+.text-3 {
+  font-size: 1.6rem;
+  font-weight: 600;
   font-family: "Montserrat", sans-serif;
 }
 
