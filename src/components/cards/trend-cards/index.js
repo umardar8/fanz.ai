@@ -8,7 +8,7 @@ const TrendCards = () => {
     { cardimg: HeroImage, head: "Techs Talk", year: "2013", rating: "7.7" },
     { cardimg: HeroImage, head: "Tech Talk", year: "2013", rating: "7.7" },
     { cardimg: HeroImage, head: "Tech Talk", year: "2013", rating: "7.7" },
-    { cardimg: HeroImage, head: "Tech Talk", year: "2013", rating: "7.7" },
+    // { cardimg: HeroImage, head: "Tech Talk", year: "2013", rating: "7.7" },
   ];
 
   return (
@@ -22,7 +22,7 @@ const TrendCards = () => {
 
     // <Tcards cardimg={card} head="Tech Talk" year="2013" rating="7.7"/>
     //   </div>
-    <div className="container tcard-con">
+    <div className="d-flex justify-content-around py-4 gx-1">
       {/* Use map to iterate over the array and render Tcards for each item */}
       {cardData.map((data, index) => (
         <Tcards

@@ -6,7 +6,7 @@ import WebFooter from "../footer";
 
 const { Header, Footer, Content } = Layout;
 export default function WebLayout(props) {
-  const { children } = props;
+  const { children, styles, classNames } = props;
   return (
     <Layout>
       <Header
@@ -21,13 +21,18 @@ export default function WebLayout(props) {
         <WebHeader />
       </Header>
       <Content
-        style={{
-          margin: 0,
-          padding: 0,
-          width: "100%",
-          height: "auto",
-          backgroundColor: "transparent",
-        }}
+        className={classNames}
+        style={
+          styles
+            ? styles
+            : {
+                margin: 0,
+                padding: 0,
+                width: "100%",
+                height: "auto",
+                backgroundColor: "#000",
+              }
+        }
       >
         {children}
       </Content>

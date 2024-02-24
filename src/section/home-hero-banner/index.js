@@ -16,10 +16,10 @@ export default function HomeHeroBanner() {
 
   return (
     <div
-      className="d-flex row m-0  p-0 position-relative "
+      className="d-flex row mx-0 p-0 "
       style={{
         backgroundImage: `url(${HeroImage})`,
-        height: "85vh",
+        height: "100vh",
         backgroundPosition: "center",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
