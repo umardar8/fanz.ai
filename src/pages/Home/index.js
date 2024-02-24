@@ -4,6 +4,7 @@ import HomeHeroBanner from "../../section/home-hero-banner";
 import TrendCards from "../../components/cards/trend-cards";
 import { HeroImage } from "../../assets";
 import BaseColors from "../../constant";
+import WeatherPanel from "../../components/weather-panel/weatherPanel";
 
 export default function Home() {
   return (
@@ -53,6 +54,9 @@ export default function Home() {
             </div>
           </div>
         </div>
+      <div className="homeContent" style={{ display: 'flex', background: '#000' }}>
+        <WeatherPanel />
+        {/* <TrendCards /> */}
       </div>
     </Layout>
   );

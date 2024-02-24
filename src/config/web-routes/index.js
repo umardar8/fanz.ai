@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "../../pages/home";
-import Explore from "../../pages/explore";
-import Profile from "../../pages/profile";
-import Shop from "../../pages/shop";
+import Home from "../../pages/Home";
+import Explore from "../../pages/Explore";
+import Profile from "../../pages/Profile";
+import Shop from "../../pages/Shop";
 import New from "../../pages/new";
 import Categories from "../../pages/categories";
 import LiveShow from "../../pages/live-show";
