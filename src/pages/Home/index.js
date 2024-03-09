@@ -36,7 +36,7 @@ export default function Home() {
         {/* row 1 */}
         <div
           className="row position-absolute m-0 p-0 justify-content-between"
-          style={{ top: -85, height: "100%" }}
+          style={{ top: -85, height: "100%", zIndex: 1 }}
         >
           <div
             className="col-4  d-flex flex-column justify-content-between"
@@ -45,7 +45,7 @@ export default function Home() {
             <WeatherPanel />
             <AdsCard />
           </div>
-          <div className="col-2 ">
+          <div className="col-2 p-0">
             <GrUp
               size={30}
               style={{
@@ -62,17 +62,16 @@ export default function Home() {
           className="row mx-0 justify-content-end p-0 "
           style={{
             background: `linear-gradient(to right, #000000 14%, rgb(255, 255, 255, 0) 62%)`,
-            marginTop: -101,
+            marginTop: -95,
+            zIndex: 0,
           }}
         >
-          <div
-            className="col-10 py-2 px-4 "
-            style={{ background: "rgb(0, 0, 0, 0.9)" }}
-          >
+          <div className="col-10 ps-5 pe-0">
             <div
-              className="row m-0 justify-content-start p-0 px-5"
+              className="row m-0 justify-content-start p-0 px-5 "
               style={{
-                background: `linear-gradient(to bottom, rgb(20, 28, 41, 0.1) 25%, rgb(20, 28, 41)   62%)`,
+                background: `linear-gradient(to bottom, rgb(0, 0, 0, 0.7) 25%, rgb(20, 28, 41)   62%)`,
+                backdropFilter: `blur(4px)`,
                 TopLeftRadius: 50,
                 BottomLeftRadius: 50,
               }}
