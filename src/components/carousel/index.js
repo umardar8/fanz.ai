@@ -51,7 +51,7 @@ export default function PrimaryCarousel(props) {
       >
         <div className="col-11 ">
           <div
-            className="text-2 text-white py-3 "
+            className="text-2 text-white py-3 text-uppercase"
             style={{ lineHeight: "5rem" }}
           >
             {title ? title : "--"}
