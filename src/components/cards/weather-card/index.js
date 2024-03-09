@@ -25,9 +25,8 @@ const WeatherCard = ({ weather, time }) => {
         </div>
         <div>
           <div
+            className="text-family fs-5 fw-normal"
             style={{
-              fontSize: 13,
-              fontWeight: 500,
               paddingRight: 10,
               paddingTop: 10,
             }}
@@ -39,9 +38,10 @@ const WeatherCard = ({ weather, time }) => {
 
       <div className="col-5 dateTime">
         <div
+          className="text-family fs-4 fw-bold"
           style={{
-            fontSize: 19,
-            fontWeight: 600,
+            // fontSize: 19,
+            // fontWeight: 600,
             textAlign: "right",
             lineHeight: "3.8rem",
           }}
@@ -49,6 +49,7 @@ const WeatherCard = ({ weather, time }) => {
           {time}
         </div>
         <div
+          className="text-family "
           style={{
             fontSize: 9,
             fontWeight: 400,

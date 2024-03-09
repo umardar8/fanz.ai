@@ -39,15 +39,20 @@ export default function HomeHeroBanner() {
             <p className="heading-1 text-white">
               Guddu in spotlight after Sunday's power breakdown
             </p>
-            <p className="text-1 text-white">
+            <p className="text-family text-white fs-5 fw-normal">
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text
               ever since the 1500s,
             </p>
-            <div className="text-2" style={{ color: BaseColors.danger }}>
+            <div
+              className="text-family fs-4 fw-normal"
+              style={{ color: BaseColors.danger }}
+            >
               Genres
             </div>
-            <div className="text-2 text-white">New's Highlights</div>
+            <div className="text-family fs-4 fw-normal text-white">
+              New's Highlights
+            </div>
             <div className="d-flex  py-4">
               <PrimaryButton
                 label="WATCH"
@@ -68,7 +73,7 @@ export default function HomeHeroBanner() {
               <div className="d-flex me-3">
                 <FaStar size={16} color={BaseColors.yellow} />
                 <h5
-                  className="px-2 text-2"
+                  className="px-2 text-family fs-4 fw-normal-2"
                   style={{ color: BaseColors.yellow }}
                 >
                   7.3
@@ -92,7 +97,7 @@ export default function HomeHeroBanner() {
               </div>
               <div className="d-flex">
                 <h5
-                  className="px-2 text-2"
+                  className="px-2 text-family fs-4 fw-normal"
                   style={{ color: BaseColors.textGrey }}
                 >
                   2024
@@ -122,7 +127,7 @@ export default function HomeHeroBanner() {
                 width: `22vw`,
               }}
             >
-              <div className="text-2 text-white py-3">
+              <div className="text-family fs-4 fw-normal text-white py-3">
                 TOP STORIES OF THE DAY
               </div>
               <TopStoryCard />

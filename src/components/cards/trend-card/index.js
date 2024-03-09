@@ -13,7 +13,7 @@ const Tcards = (props) => {
         style={{ height: "37vh", maxWidth: "11vw" }}
         className="rounded shadow-1 mb-2 "
       />
-      <div className="text-4 text-white">{props.head}</div>
+      <div className="text-family fs-4 fw-normal text-white">{props.head}</div>
       <div style={{ color: BaseColors.textGrey, fontSize: "0.9rem" }}>
         {props.year}
       </div>
@@ -21,7 +21,7 @@ const Tcards = (props) => {
         <div className="d-flex">
           <FaStar size={12} color={BaseColors.yellow} />
           <div
-            className="px-2 text-1"
+            className="px-2 text-family fs-6 fw-normal"
             style={{ color: BaseColors.yellow, fontSize: "0.9rem" }}
           >
             7.3
