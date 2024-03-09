@@ -16,7 +16,7 @@ export default function HomeHeroBanner() {
 
   return (
     <div
-      className="d-flex row mx-0 p-0 "
+      className="d-flex row mx-0 p-0"
       style={{
         backgroundImage: `url(${HeroImage})`,
         height: "100vh",
@@ -115,7 +115,7 @@ export default function HomeHeroBanner() {
               className="justify-content-center text-center"
               style={{
                 background: `rgb(92, 92, 92, 0.7)`,
-                height: "47vh",
+                height: "52vh",
                 borderTopLeftRadius: 25,
                 borderTopRightRadius: 25,
                 padding: 20,

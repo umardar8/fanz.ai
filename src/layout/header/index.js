@@ -13,11 +13,24 @@ import { LuSearch } from "react-icons/lu";
 import BaseColors from "../../constant";
 import PrimaryButton from "../../components/button";
 import { Avatar, AvatarBadge } from "@chakra-ui/react";
+import PrimaryModal from "../../components/modal";
+import SignIn from "../../pages/auth/sign-in";
 
 export default function WebHeader() {
   const navigate = useNavigate();
   const [colorHover, setcolorHover] = useState(false);
   const [colorChange, setColorchange] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+  // const handleOk = () => {
+  //   setIsModalOpen(false);
+  // };
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
 
   const changeNavbarColor = () => {
     if (window.scrollY >= 300) {
@@ -116,7 +129,7 @@ export default function WebHeader() {
               >
                 <InputField
                   placeholder="SEARCH"
-                  rightIcon={<LuSearch size={18} />}
+                  rightIcon={<LuSearch size={16} />}
                   inputStyle={{
                     border: `1px solid ${BaseColors.medium_grey}`,
                     borderRadius: 25,
@@ -147,7 +160,11 @@ export default function WebHeader() {
                 // to="/profile"
                 style={Styles.headerItem}
               >
-                <Avatar src="https://bit.ly/dan-abramov" size="md">
+                <Avatar
+                  src="https://bit.ly/dan-abramov"
+                  size="md"
+                  onClick={showModal}
+                >
                   <AvatarBadge boxSize="1em" bg="green.500" />
                 </Avatar>
               </Link>
@@ -160,7 +177,7 @@ export default function WebHeader() {
           style={{
             maxHeight: "5vh",
             background: `rgb(0, 0, 0, 0.5)`,
-            color: "yellow",
+            color: "rgb(255, 219, 43)",
             overflow: "hidden",
           }}
         >
@@ -236,7 +253,7 @@ export default function WebHeader() {
           style={{
             maxHeight: "5vh",
             background: `rgb(0, 0, 0, 0.5)`,
-            color: "yellow",
+            color: "rgb(255, 219, 43)",
             overflow: "hidden",
             marginTop: -15,
           }}
@@ -252,6 +269,15 @@ export default function WebHeader() {
           </h5>
         </div>
       </div>
+      <PrimaryModal
+        open={isModalOpen}
+        onCancel={handleCancel}
+        Modalbody={
+          <>
+            <SignIn />
+          </>
+        }
+      />
     </>
   );
 }

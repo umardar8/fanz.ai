@@ -8,13 +8,13 @@ import {
 
 export default function WebFooter() {
   return (
-    <div class="pg-footer">
-      <footer class="footer">
-        <div class="footer-content">
-          <div class="footer-content-column">
-            <div class="footer-menu">
-              <div class="custom-select">
-                <select>
+    <div className="pg-footer">
+      <footer className="footer">
+        <div className="footer-content">
+          <div className="footer-content-column">
+            <div className="footer-menu">
+              <div className="custom-select">
+                <select className="p-2 rounded-1">
                   <option value="0">English</option>
                   <option value="1">Audi</option>
                   <option value="2">BMW</option>
@@ -23,60 +23,60 @@ export default function WebFooter() {
               </div>
             </div>
           </div>
-          <div class="footer-content-column">
-            <div class="footer-menu">
-              <h2 class="footer-menu-name"> NAVIGATION</h2>
-              <ul id="menu-company" class="footer-menu-list">
-                <li class="menu-item menu-item-type-post_type menu-item-object-page">
+          <div className="footer-content-column">
+            <div className="footer-menu">
+              <h2 className="footer-menu-name"> NAVIGATION</h2>
+              <ul id="menu-company" className="footer-menu-list">
+                <li className="menu-item menu-item-type-post_type menu-item-object-page">
                   <a href="#">Home</a>
                 </li>
-                <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                <li className="menu-item menu-item-type-taxonomy menu-item-object-category">
                   <a href="#">FAQ</a>
                 </li>
-                <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                <li className="menu-item menu-item-type-post_type menu-item-object-page">
                   <a href="#">Terms & Conditions</a>
                 </li>
-                <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                <li className="menu-item menu-item-type-post_type menu-item-object-page">
                   <a href="#">Trends</a>
                 </li>
-                <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                <li className="menu-item menu-item-type-taxonomy menu-item-object-category">
                   <a href="#">About Us</a>
                 </li>
-                <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                <li className="menu-item menu-item-type-post_type menu-item-object-page">
                   <a href="#">Help Center</a>
                 </li>
               </ul>
             </div>
           </div>
-          <div class="footer-content-column">
-            <div class="footer-call-to-action">
-              <h2 class="footer-call-to-action-title">Legal</h2>
-              <ul id="menu-company" class="footer-menu-list">
-                <li class="menu-item menu-item-type-post_type menu-item-object-page">
+          <div className="footer-content-column">
+            <div className="footer-call-to-action">
+              <h2 className="footer-call-to-action-title">Legal</h2>
+              <ul id="menu-company" className="footer-menu-list">
+                <li className="menu-item menu-item-type-post_type menu-item-object-page">
                   <a href="#">Privacy Policy</a>
                 </li>
-                <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                <li className="menu-item menu-item-type-taxonomy menu-item-object-category">
                   <a href="#">Terms Of service</a>
                 </li>
-                <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                <li className="menu-item menu-item-type-post_type menu-item-object-page">
                   <a href="#">Cookie Preferences</a>
                 </li>
-                <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                <li className="menu-item menu-item-type-post_type menu-item-object-page">
                   <a href="#">Corporate Information</a>
                 </li>
               </ul>
             </div>
           </div>
-          <div class="footer-content-column">
-            <div class="footer-menu">
-              <h2 class="footer-menu-name"> TALK TO US</h2>
-              <ul id="menu-quick-links" class="footer-menu-list">
-                <li class="menu-item menu-item-type-custom menu-item-object-custom">
+          <div className="footer-content-column">
+            <div className="footer-menu">
+              <h2 className="footer-menu-name"> TALK TO US</h2>
+              <ul id="menu-quick-links" className="footer-menu-list">
+                <li className="menu-item menu-item-type-custom menu-item-object-custom">
                   <a target="_blank" rel="noopener noreferrer" href="#">
                     support@Fanz.ai
                   </a>
                 </li>
-                <li class="menu-item menu-item-type-custom menu-item-object-custom">
+                <li className="menu-item menu-item-type-custom menu-item-object-custom">
                   <a target="_blank" rel="noopener noreferrer" href="#">
                     +11 8236816 90
                   </a>
@@ -84,9 +84,9 @@ export default function WebFooter() {
               </ul>
             </div>
           </div>
-          <div class="footer-content-column">
-            <div class="footer-call-to-action">
-              <h2 class="footer-call-to-action-title"> FOLLOW US</h2>
+          <div className="footer-content-column">
+            <div className="footer-call-to-action">
+              <h2 className="footer-call-to-action-title"> FOLLOW US</h2>
               <div className="social-icons-container">
                 <div className="social-icon facebook">
                   <FontAwesomeIcon icon={faFacebookF} className="icon" />
@@ -103,10 +103,10 @@ export default function WebFooter() {
             </div>
           </div>
         </div>
-        <div class="footer-copyright">
-          <div class="footer-copyright-wrapper">
-            <p class="footer-copyright-text">
-              <a class="footer-copyright-link" href="#" target="_self">
+        <div className="footer-copyright">
+          <div className="footer-copyright-wrapper">
+            <p className="footer-copyright-text">
+              <a className="footer-copyright-link" href="#" target="_self">
                 {" "}
                 ©2023. FANz.ai All rights reserved.{" "}
               </a>

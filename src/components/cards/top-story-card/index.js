@@ -5,7 +5,7 @@ import BaseColors from "../../../constant";
 
 export default function TopStoryCard() {
   return (
-    <div className="row m-0 py-2" style={{}}>
+    <div className="row m-0 py-2">
       <div className="col-4">
         <img
           className="shadow-lg"
