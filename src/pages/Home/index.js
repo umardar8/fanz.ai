@@ -70,13 +70,13 @@ export default function Home() {
             <div
               className="row m-0 justify-content-start p-0 px-5 "
               style={{
-                background: `linear-gradient(to bottom, rgb(0, 0, 0, 0.7) 25%, rgb(20, 28, 41)   62%)`,
+                background: `linear-gradient(to bottom, rgb(0, 0, 0, 0.7) 25%, rgb(8, 11, 16)   62%)`,
                 backdropFilter: `blur(4px)`,
                 TopLeftRadius: 50,
                 BottomLeftRadius: 50,
               }}
             >
-              <div className="col-10">
+              <div className="col-10 pb-4">
                 <PrimaryCarousel
                   title="Shows You Must Watch"
                   autoplay={true}

@@ -6,21 +6,26 @@ import { LuEye } from "react-icons/lu";
 
 const Tcards = (props) => {
   return (
-    <div style={{ maxWidth: "13vw" }}>
+    <div style={{ maxWidth: "12vw" }}>
       <img
         src={props.cardimg}
         alt=""
-        style={{ height: "37vh", maxWidth: "12vw" }}
+        style={{ height: "37vh", maxWidth: "11vw" }}
         className="rounded shadow-1 mb-2 "
       />
-      <div className="text-2 text-white">{props.head}</div>
-      <h6 style={{ color: BaseColors.textGrey }}>{props.year}</h6>
-      <div className=" d-flex justify-content-between">
+      <div className="text-4 text-white">{props.head}</div>
+      <div style={{ color: BaseColors.textGrey, fontSize: "0.9rem" }}>
+        {props.year}
+      </div>
+      <div className=" d-flex justify-content-between pe-3 py-1">
         <div className="d-flex">
           <FaStar size={12} color={BaseColors.yellow} />
-          <h5 className="px-2 text-1" style={{ color: BaseColors.yellow }}>
+          <div
+            className="px-2 text-1"
+            style={{ color: BaseColors.yellow, fontSize: "0.9rem" }}
+          >
             7.3
-          </h5>
+          </div>
         </div>
         <div className="d-flex">
           <LuEye size={16} color={BaseColors.white} className="me-2" />
