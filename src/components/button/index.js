@@ -12,6 +12,7 @@ export default function PrimaryButton(props) {
     fontSize,
     marginRight,
     padding,
+    onClick,
   } = props;
 
   return (
@@ -32,6 +33,7 @@ export default function PrimaryButton(props) {
       }
       rightIcon={rightIcon}
       variant={variant}
+      onClick={onClick}
     >
       {label}
     </Button>

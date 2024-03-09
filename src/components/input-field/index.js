@@ -4,7 +4,9 @@ import {
   InputGroup,
   InputLeftElement,
   InputRightElement,
+  Text,
 } from "@chakra-ui/react";
+import BaseColors from "../../constant";
 
 export default function InputField(props) {
   const {
@@ -16,25 +18,50 @@ export default function InputField(props) {
     onChange,
     rightIcon,
     inputStyle,
+    label,
   } = props;
 
   return (
-    <InputGroup>
-      {leftIcon ? (
-        <InputLeftElement pointerEvents="none">{leftIcon}</InputLeftElement>
-      ) : null}
-      <Input
-        width="100%"
-        style={inputStyle ? inputStyle : { border: "1px solid red" }}
-        placeholder={placeholder}
-        type={type}
-        size={size ? size : "md"}
-        value={value}
-        onChange={onChange}
-      />
-      {rightIcon ? (
-        <InputRightElement pointerEvents="none">{rightIcon}</InputRightElement>
-      ) : null}
-    </InputGroup>
+    <>
+      <div className={label ? "row m-0" : null}>
+        {label ? (
+          <div className="col mb-1">
+            <div className="text-light fs-5">{label}</div>{" "}
+          </div>
+        ) : null}
+        <InputGroup>
+          {leftIcon ? (
+            <InputLeftElement pointerEvents="none">{leftIcon}</InputLeftElement>
+          ) : null}
+
+          <Input
+            width="95%"
+            style={
+              inputStyle
+                ? inputStyle
+                : {
+                    border: `1px solid ${BaseColors.medium_grey}`,
+                    borderRadius: 10,
+                    width: "250px",
+                    height: "5vh",
+                    padding: "15px 20px",
+                    background: BaseColors.medium_light_grey,
+                    color: BaseColors.white,
+                  }
+            }
+            placeholder={placeholder}
+            type={type}
+            size={size ? size : "md"}
+            value={value}
+            onChange={onChange}
+          />
+          {rightIcon ? (
+            <InputRightElement pointerEvents="none">
+              {rightIcon}
+            </InputRightElement>
+          ) : null}
+        </InputGroup>
+      </div>
+    </>
   );
 }
