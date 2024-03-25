@@ -6,8 +6,11 @@ export default function PrimaryButton(props) {
   const {
     btnStyle,
     background,
+    leftIcon,
     rightIcon,
     variant,
+    colorScheme,
+    size,
     label,
     fontSize,
     marginRight,
@@ -31,8 +34,11 @@ export default function PrimaryButton(props) {
               padding: padding ? padding : "auto",
             }
       }
+      leftIcon={leftIcon}
       rightIcon={rightIcon}
       variant={variant}
+      colorScheme={colorScheme}
+      size={size}
       onClick={onClick}
     >
       {label}
