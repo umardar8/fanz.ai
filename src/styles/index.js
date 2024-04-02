@@ -21,4 +21,18 @@ export const Styles = {
     letterSpacing: "0.1rem",
     textDecoration: "none",
   },
+  slider_arrow_Prev: {
+    // background: BaseColors.white,
+    // border: "none",
+    // color: BaseColors.white,
+  },
+  slider_arrow_Back: {
+    // background: BaseColors.white,
+    // border: "none",
+    // color: BaseColors.white,
+  },
+  slider_arrow_Text: {
+    fontSize: "20px",
+    color: BaseColors.white,
+  },
 };

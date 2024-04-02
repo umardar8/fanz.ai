@@ -19,7 +19,7 @@ export default function HomeHeroBanner() {
       className="d-flex row mx-0 p-0"
       style={{
         backgroundImage: `url(${HeroImage})`,
-        height: "100vh",
+        height: "99vh",
         backgroundPosition: "center",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",

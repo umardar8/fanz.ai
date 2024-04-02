@@ -8,7 +8,14 @@ export default function PrimaryModal(props) {
 
   return (
     <>
-      <Modal title="Basic Modal" show={open} onhide={onCancel} style={styles}>
+      <Modal
+        title="Basic Modal"
+        show={open}
+        onhide={onCancel}
+        style={styles}
+        backdrop={true}
+        keyboard={true}
+      >
         {Modalbody}
       </Modal>
     </>

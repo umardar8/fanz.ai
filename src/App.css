@@ -354,6 +354,11 @@
   font-weight: 800;
   font-family: "Montserrat", sans-serif;
 }
+.heading-2 {
+  /* font-size: 3.5rem; */
+  font-size: calc(5px + 7 * ((100vw - 320px) / 680));
+  font-family: "Montserrat", sans-serif;
+}
 
 .text-family {
   font-family: "Montserrat", sans-serif;
@@ -387,7 +392,6 @@
 }
 
 .weatherPanel {
-  max-width: 22vw;
   border-radius: 20px;
   background-color: rgb(33, 48, 67, 0.8);
   padding: 15px;
