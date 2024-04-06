@@ -25,13 +25,13 @@ const WeatherPanel = () => {
     // Method and Variables for API call to get weather.
     const fetcher = (...args) => fetch(...args).then((res) => res.json());
     const api = {
-        base: 'http://api.weatherapi.com/v1/current.json',
+        base: 'https://api.weatherapi.com/v1/forecast.json',
         key: '3aa4bf838d804c0cb33120407240902'
     }
 
     // Making API call and saving weather data.
     const {
-        data: weather1,
+        data: weather,
         error,
         isValidating,
     } = useSWR(`${api.base}?key=${api.key}&q=${latitude},${longitude}&aqi=no`, fetcher);
@@ -40,25 +40,62 @@ const WeatherPanel = () => {
     if (error) return <div className='failed'>failed to load</div>;
     if (isValidating) return <div className="Loading">Loading...</div>;
 
-
     // convert API returned time-data into desired format.
-    const formatTime = (weather) => {
-        const [date, time] = weather.location.localtime.split(" ");
-        var [h, m] = time.split(":");
-        var H = h > 12 ? h - 12 : h;
-        if (H == 0) { H = 12 }
-        var ampm = h > 11 ? " pm" : " am";
-        var converted = H + ":" + m + ampm;
+    const format = (dateTime, type) => {
+        const [date, time] = dateTime.split(" ");
+        const [cdate, ctime] = weather.location.localtime.split(" ");
+        const [ch, cm] = ctime.split(":");
+        if (type == "t") {
+            var [h, m] = time.split(":");
+            var H = h > 12 ? h - 12 : h;
+            if (H == 0) { H = 12 }
+            var ampm = h > 11 ? " pm" : " am";
+            var converted = H + ":" + cm + ampm;
+        }
+        if (type == "d") {
+            var dateObj = new Date(date);
+            const [y, m, d] = date.split("-")
+            const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
+            const currentDayOfWeek = daysOfWeek[dateObj.getDay()];
+            const currentMonth = months[dateObj.getMonth()];
+            var converted = currentDayOfWeek + ", " + d + " " + currentMonth;
+        }
         return converted;
     };
 
+    const getIndex = (forecastNum, type) => {
+        var [date, time] = weather.location.localtime.split(" ");
+        var [hour, min] = time.split(":");
+        if (type == 'd') {
+            if (forecastNum==1) { var index = (hour==23) ? 1 : 0; }
+            if (forecastNum==2) { var index = (hour==22) ? 1 : 0; }
+            if (forecastNum==3) { var index = (hour==21) ? 1 : 0; }
+            if (forecastNum==4) { var index = (hour==20) ? 1 : 0; }
+        }
+        if (type == 'h') {
+            if (forecastNum==1) { var index = (hour==23) ? 0 : parseInt(hour)+1 }
+            if (forecastNum==2) { var index = (hour==22) ? 0 : parseInt(hour)+2 }
+            if (forecastNum==3) { var index = (hour==21) ? 0 : parseInt(hour)+3 }
+            if (forecastNum==4) { var index = (hour==20) ? 0 : parseInt(hour)+4 }
+        }
+        return index;
+    }
+
+    var cityName = weather.location.name;
+    var current = weather.current;
+    var forecast1 = weather.forecast.forecastday[getIndex(1,'d')].hour[getIndex(1,'h')];
+    var forecast2 = weather.forecast.forecastday[getIndex(2,'d')].hour[getIndex(2,'h')];
+    var forecast3 = weather.forecast.forecastday[getIndex(3,'d')].hour[getIndex(3,'h')];
+    var forecast4 = weather.forecast.forecastday[getIndex(4,'d')].hour[getIndex(4,'h')];
+
     return (
         <div className='weatherPanel'>
-            <WeatherCard weather={weather1} time={formatTime(weather1)}/>
-            <WeatherCard weather={weather1} time={formatTime(weather1)}/>
-            <WeatherCard weather={weather1} time={formatTime(weather1)}/>
-            <WeatherCard weather={weather1} time={formatTime(weather1)}/>
-            <WeatherCard weather={weather1} time={formatTime(weather1)}/>
+            <WeatherCard name={cityName} temp={current.temp_f} icon={current.condition.icon} date={format(weather.location.localtime, "d")} time={format(weather.location.localtime, "t")}/>
+            <WeatherCard name={cityName} temp={forecast1.temp_f} icon={forecast1.condition.icon} date={format(forecast1.time, "d")} time={format(forecast1.time, "t")}/>
+            <WeatherCard name={cityName} temp={forecast2.temp_f} icon={forecast2.condition.icon} date={format(forecast2.time, "d")} time={format(forecast2.time, "t")}/>
+            <WeatherCard name={cityName} temp={forecast3.temp_f} icon={forecast3.condition.icon} date={format(forecast3.time, "d")} time={format(forecast3.time, "t")}/>
+            <WeatherCard name={cityName} temp={forecast4.temp_f} icon={forecast4.condition.icon} date={format(forecast4.time, "d")} time={format(forecast4.time, "t")}/>
         </div>
     );
 };
