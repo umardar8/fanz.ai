@@ -6,13 +6,18 @@ export default function PrimaryButton(props) {
   const {
     btnStyle,
     background,
+    leftIcon,
     rightIcon,
     variant,
+    colorScheme,
+    size,
     label,
     fontSize,
     marginRight,
     padding,
     onClick,
+    btnWidth,
+    btnClassName,
   } = props;
 
   return (
@@ -29,11 +34,16 @@ export default function PrimaryButton(props) {
               fontSize: fontSize ? fontSize : `1rem`,
               marginRight: marginRight ? marginRight : "none",
               padding: padding ? padding : "auto",
+              width: btnWidth ? btnWidth : "auto",
             }
       }
+      leftIcon={leftIcon}
       rightIcon={rightIcon}
       variant={variant}
+      colorScheme={colorScheme}
+      size={size}
       onClick={onClick}
+      className={btnClassName}
     >
       {label}
     </Button>

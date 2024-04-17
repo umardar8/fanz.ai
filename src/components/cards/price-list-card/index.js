@@ -1,112 +1,108 @@
 import React from "react";
-import { FaCircleArrowRight } from "react-icons/fa6";
+import { IoArrowForwardCircleOutline } from "react-icons/io5";
 import { mi } from "../../../assets";
 
 export default function PriceListCard() {
   return (
     <>
       <div
-        class="card pricingCard"
         style={{
           backgroundColor: "#282828",
           borderRadius: "15px",
-          marginBottom: "15px",
-          padding: "10px",
+          padding: "15px 7px",
+          flexDirection: "row",
+          justifyContent: "center",
+          alignItems: "center",
         }}
       >
-        <div class="card-body" style={{ margin: "auto" }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-around",
+            alignItems: "center",
+            borderRadius: "22px",
+            height: "87px",
+            background: "linear-gradient(to bottom, #5436A9, #000000)",
+            marginBottom: "20px",
+          }}
+        >
+          <img src={mi} alt="" style={{ width: "22px", height: "22px" }} />
           <div
-            className="pricing-card"
+            className="pt-3"
             style={{
               display: "flex",
-              gap: "24px",
+              flexDirection: "column",
               justifyContent: "center",
-              alignItems: "center",
-              borderRadius: "22px",
-              width: "193px",
-              height: "87px",
-              background: "linear-gradient(to bottom, #5436A9, #000000)",
-              marginBottom: "20px",
+              color: "white",
             }}
           >
-            <img src={mi} alt="" style={{ width: "22px", height: "22px" }} />
-            <div
-              className=""
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                color: "white",
-              }}
-            >
-              <p style={{ position: "relative", top: "6px" }}>Xiomi</p>
-              <p>$134.6</p>
-            </div>
-            <FaCircleArrowRight
-              style={{ color: "white", backgroundColor: "transparent" }}
-            />
+            <p style={{ lineHeight: "1rem" }}>Xiomi</p>
+            <p className="fs-4 fw-4">$134.6</p>
           </div>
+          <IoArrowForwardCircleOutline
+            size={24}
+            style={{ color: "white", backgroundColor: "transparent" }}
+          />
+        </div>
 
+        <div
+          style={{
+            display: "flex",
+            gap: "24px",
+            justifyContent: "center",
+            alignItems: "center",
+            borderRadius: "22px",
+            height: "87px",
+            background: "linear-gradient(to bottom, #5436A9, #000000)",
+            marginBottom: "20px",
+          }}
+        >
+          <img src={mi} alt="" style={{ width: "22px", height: "22px" }} />
           <div
-            className="pricing-card"
+            className="pt-3"
             style={{
               display: "flex",
-              gap: "24px",
-              justifyContent: "center",
-              alignItems: "center",
-              borderRadius: "22px",
-              width: "193px",
-              height: "87px",
-              background: "linear-gradient(to bottom, #5436A9, #000000)",
-              marginBottom: "20px",
+              flexDirection: "column",
+              color: "white",
             }}
           >
-            <img src={mi} alt="" style={{ width: "22px", height: "22px" }} />
-            <div
-              className=""
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                color: "white",
-              }}
-            >
-              <p style={{ position: "relative", top: "6px" }}>Xiomi</p>
-              <p>$134.6</p>
-            </div>
-            <FaCircleArrowRight
-              style={{ color: "white", backgroundColor: "transparent" }}
-            />
+            <p style={{ lineHeight: "1rem" }}>Xiomi</p>
+            <p className="fs-4 fw-4">$134.6</p>
           </div>
+          <IoArrowForwardCircleOutline
+            size={24}
+            style={{ color: "white", backgroundColor: "transparent" }}
+          />
+        </div>
 
+        <div
+          style={{
+            display: "flex",
+            gap: "24px",
+            justifyContent: "center",
+            alignItems: "center",
+            borderRadius: "22px",
+            height: "87px",
+            background: "linear-gradient(to bottom, #5436A9, #000000)",
+            marginBottom: "20px",
+          }}
+        >
+          <img src={mi} alt="" style={{ width: "22px", height: "22px" }} />
           <div
-            className="pricing-card"
+            className="pt-3"
             style={{
               display: "flex",
-              gap: "24px",
-              justifyContent: "center",
-              alignItems: "center",
-              borderRadius: "22px",
-              width: "193px",
-              height: "87px",
-              background: "linear-gradient(to bottom, #5436A9, #000000)",
-              marginBottom: "20px",
+              flexDirection: "column",
+              color: "white",
             }}
           >
-            <img src={mi} alt="" style={{ width: "22px", height: "22px" }} />
-            <div
-              className=""
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                color: "white",
-              }}
-            >
-              <p style={{ position: "relative", top: "6px" }}>Xiomi</p>
-              <p>$134.6</p>
-            </div>
-            <FaCircleArrowRight
-              style={{ color: "white", backgroundColor: "transparent" }}
-            />
+            <p style={{ lineHeight: "1rem" }}>Xiomi</p>
+            <p className="fs-4 fw-4">$134.6</p>
           </div>
+          <IoArrowForwardCircleOutline
+            size={24}
+            style={{ color: "white", backgroundColor: "transparent" }}
+          />
         </div>
       </div>
     </>

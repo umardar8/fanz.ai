@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
-// import PrimaryButton from "../button";
-// import { Button, Modal } from "antd";
 
 export default function PrimaryModal(props) {
   const { open, onCancel, Modalbody, styles } = props;
@@ -11,10 +9,12 @@ export default function PrimaryModal(props) {
       <Modal
         title="Basic Modal"
         show={open}
-        onhide={onCancel}
+        onHide={onCancel}
         style={styles}
         backdrop={true}
         keyboard={true}
+        size="xl"
+        centered
       >
         {Modalbody}
       </Modal>

@@ -8,6 +8,8 @@ import BaseColors from "../../constant";
 import PrimaryCarousel from "../../components/carousel";
 import { HeroImage } from "../../assets";
 import { GrUp } from "react-icons/gr";
+import AdsCard from "../../components/cards/ads-card";
+import PriceListCard from "../../components/cards/price-list-card";
 
 const cardData = [
   { cardimg: HeroImage, head: "Tech Talk", year: "2013", rating: "7.7" },
@@ -26,12 +28,17 @@ const cardData = [
 
 export default function Home() {
   const [isShow, setIsShow] = useState(false);
+  const [slidesToShow, setSlidesToShow] = useState();
 
   const handleResize = () => {
-    if (window.innerWidth < 768) {
-      setIsShow(true);
-    } else {
+    if (window.innerWidth > 768) {
       setIsShow(false);
+      setSlidesToShow(4);
+    } else if (window.innerWidth < 768 && window.innerWidth > 450) {
+      setIsShow(true);
+      setSlidesToShow(3);
+    } else {
+      setSlidesToShow(1);
     }
   };
 
@@ -49,17 +56,17 @@ export default function Home() {
         {/* row 1 */}
         {!isShow ? (
           <div
-            className="row position-absolute m-0 p-0 justify-content-between"
-            style={{ top: -85, height: "100%" }}
+            className="row position-absolute m-0 p-0 justify-content-between "
+            style={{ top: -55, height: "100%" }}
           >
             <div
-              className="col-4 col-xl-3 d-flex flex-column justify-content-between border"
+              className="col-4 col-xl-3  d-flex flex-column justify-content-between  p-0 m-0"
               style={{ height: "100%", zIndex: 4 }}
             >
               <WeatherPanel />
-              {/* <AdsCard /> */}
+              <AdsCard />
             </div>
-            <div className="col-2 p-0">
+            <div className="col-2 p-0 d-none d-xl-block " style={{ zIndex: 4 }}>
               <GrUp
                 size={30}
                 style={{
@@ -68,7 +75,7 @@ export default function Home() {
                   transition: "opacity 0.3s ease",
                 }}
               />
-              {/* <PriceListCard /> */}
+              <PriceListCard />
             </div>
           </div>
         ) : null}
@@ -81,9 +88,9 @@ export default function Home() {
             zIndex: 0,
           }}
         >
-          <div className="col-md-9 col-lg-10 ps-5 pe-0 border">
+          <div className="col col-lg-9 col-xl-10 ps-5 pe-0 ">
             <div
-              className="row m-0 justify-content-md-start p-0 px-lg-5 px-auto "
+              className="row m-0 justify-content-md-start p-0 px-xl-5 px-auto "
               style={{
                 background: `linear-gradient(to bottom, rgb(0, 0, 0, 0.7) 25%, rgb(8, 11, 16)   62%)`,
                 backdropFilter: `blur(4px)`,
@@ -91,27 +98,27 @@ export default function Home() {
                 BottomLeftRadius: 50,
               }}
             >
-              <div className="col-12 col-lg-10 pb-4 border">
+              <div className="col-12 col-xl-10 pb-4 ">
                 <PrimaryCarousel
                   title="Shows You Must Watch"
                   autoplay={true}
                   autoplaySpeed={3000}
                   cardData={cardData}
-                  slidesToShow={window.innerWidth < 768 ? 3 : 4}
+                  slidesToShow={slidesToShow}
                 />
               </div>
             </div>
-            <div className="row m-0 justify-content-md-start p-0 px-lg-5 px-auto">
-              <div className="col-12 col-lg-10 pb-4 border">
+            <div className="row m-0 justify-content-md-start p-0 px-xl-5 px-auto">
+              <div className="col-12 col-xl-10 pb-4 ">
                 <PrimaryCarousel
                   title="Recommended For You"
                   cardData={cardData}
-                  slidesToShow={window.innerWidth < 768 ? 3 : 4}
+                  slidesToShow={slidesToShow}
                 />
                 <PrimaryCarousel
                   title="Top Tech Trend"
                   cardData={cardData}
-                  slidesToShow={window.innerWidth < 768 ? 3 : 4}
+                  slidesToShow={slidesToShow}
                 />
               </div>
             </div>

@@ -7,6 +7,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import BaseColors from "../../constant";
+import { Styles } from "../../styles";
 
 export default function InputField(props) {
   const {
@@ -18,6 +19,7 @@ export default function InputField(props) {
     onChange,
     rightIcon,
     inputStyle,
+    inputWidth,
     label,
   } = props;
 
@@ -26,7 +28,9 @@ export default function InputField(props) {
       <div className={label ? "row m-0" : null}>
         {label ? (
           <div className="col mb-1">
-            <div className="text-light fs-5">{label}</div>{" "}
+            <div className="text-light" style={Styles.headerItem}>
+              {label}
+            </div>{" "}
           </div>
         ) : null}
         <InputGroup>
@@ -42,7 +46,7 @@ export default function InputField(props) {
                 : {
                     border: `1px solid ${BaseColors.medium_grey}`,
                     borderRadius: 10,
-                    width: "250px",
+                    width: inputWidth ? inputWidth : "250px",
                     height: "5vh",
                     padding: "15px 20px",
                     background: BaseColors.medium_light_grey,

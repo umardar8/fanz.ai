@@ -10,6 +10,7 @@ import { BsDownload } from "react-icons/bs";
 import { FiSettings } from "react-icons/fi";
 import TopStoryCard from "../../components/cards/top-story-card";
 import { FaStar } from "react-icons/fa";
+import { FaWifi } from "react-icons/fa";
 
 export default function HomeHeroBanner() {
   const [isSliderHovered, setIsSliderHovered] = useState(false);
@@ -30,12 +31,20 @@ export default function HomeHeroBanner() {
       <div
         className="row m-0 p-0 d-flex justify-content-between position-absolute "
         style={{
-          minHeight: `85vh`,
+          minHeight: `100vh`,
           background: `linear-gradient(to right, #000000 14%, rgb(255, 255, 255, 0) 62%)`,
         }}
       >
-        <div className="col-11 col-md-7 d-flex flex-column justify-content-center align-items-center pt-5">
-          <div style={{ maxWidth: `80%` }} className="pt-5">
+        <div className="col-11 col-md-7 d-flex flex-column justify-content-center align-items-center py-5">
+          <div style={{ maxWidth: `80%` }} className="py-5">
+            <PrimaryButton
+              label="Live"
+              btnStyle={{
+                background: "#FE4703",
+                color: "white",
+              }}
+              leftIcon={<FaWifi />}
+            />
             <p className="heading-1 text-white">
               Guddu in spotlight after Sunday's power breakdown
             </p>

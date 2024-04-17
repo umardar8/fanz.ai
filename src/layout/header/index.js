@@ -3,18 +3,15 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Link, useNavigate } from "react-router-dom";
-import color from "../../constant";
 import { Styles } from "../../styles";
 import { logo } from "../../assets";
 import InputField from "../../components/input-field";
-import { FiGift } from "react-icons/fi";
-import { IoIosNotificationsOutline } from "react-icons/io";
 import { LuSearch } from "react-icons/lu";
 import BaseColors from "../../constant";
-import PrimaryButton from "../../components/button";
 import { Avatar, AvatarBadge } from "@chakra-ui/react";
 import PrimaryModal from "../../components/modal";
-import SignIn from "../../pages/auth/sign-in";
+import WebAuth from "../../pages/auth";
+import PrimaryButton from "../../components/button";
 
 export default function WebHeader() {
   const navigate = useNavigate();
@@ -33,7 +30,7 @@ export default function WebHeader() {
   };
 
   const changeNavbarColor = () => {
-    if (window.scrollY >= 300) {
+    if (window.scrollY >= 500) {
       setColorchange(true);
     } else {
       setColorchange(false);
@@ -61,15 +58,6 @@ export default function WebHeader() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-
-  const linkStyle = {
-    color: colorHover ? `${color.pink}` : `${color.white}`, // Change color when colorChange is true
-    fontWeight: "300",
-    fontSize: "1.4rem",
-    fontFamily: `Teko,sans-serif`,
-    letterSpacing: "0.1rem",
-    textDecoration: "none",
-  };
 
   return (
     <>
@@ -122,7 +110,7 @@ export default function WebHeader() {
               </Link>
 
               {/* </header> */}
-
+              {/* search */}
               <Link
                 className="d-none d-xl-block border-none headerItem"
                 style={Styles.headerItem}
@@ -141,20 +129,48 @@ export default function WebHeader() {
                   }}
                 />
               </Link>
-              <Link
+
+              {/* wishbox */}
+              {/* <Link
                 className="d-none d-md-block border-none headerItem"
                 to="/blog"
                 style={Styles.headerItem}
               >
                 <FiGift size={20} />
-              </Link>
-              <Link
+              </Link> */}
+
+              {/* Notification */}
+              {/* <Link
                 className=" border-none headerItem"
                 to="/contact"
                 style={Styles.headerItem}
               >
                 <IoIosNotificationsOutline size={25} />
-              </Link>
+              </Link> */}
+              {/* <PrimaryButton
+                btnStyle={
+                  {
+                    // background: "#FE4703",
+                    // color: "white",
+                  }
+                }
+                btnClassName="d-flex m-0"
+                label={
+                  <>
+                    <Avatar
+                      src="https://bit.ly/dan-abramov"
+                      size="md"
+                      onClick={showModal}
+                    >
+                      <AvatarBadge boxSize="1em" bg="green.500" />
+                    </Avatar>
+                    <div>
+                      <h5>hjkfjhaskjfjkasfa</h5>
+                      <h6>hjkfjhaskjfjkasfa</h6>
+                    </div>
+                  </>
+                }
+              /> */}
               <Link
                 className=" border-none headerItem pt-4"
                 // to="/profile"
@@ -171,33 +187,39 @@ export default function WebHeader() {
             </Nav>
           </Container>
         </Navbar>
+
         {/* header News */}
-        <div
-          className="text-center py-2 py-md-1 d-none d-md-block"
-          style={{
-            maxHeight: "5vh",
-            background: `rgb(0, 0, 0, 0.5)`,
-            color: "rgb(255, 219, 43)",
-            overflow: "hidden",
-          }}
-        >
-          <h5
+        {!colorChange ? (
+          <div
+            className="text-center py-2 py-md-1 d-none d-md-block"
             style={{
-              animation: `move 15s infinite linear`,
-              whiteSpace: "nowrap",
+              maxHeight: "5vh",
+              background: `rgb(0, 0, 0, 0.5)`,
+              color: "rgb(255, 219, 43)",
+              overflow: "hidden",
             }}
           >
-            Breaking New's! Lorem Ipsum is simply dummy text of the printing and
-            typesetting industry.
-          </h5>
-        </div>
+            <h5
+              style={{
+                animation: `move 15s infinite linear`,
+                whiteSpace: "nowrap",
+              }}
+            >
+              Breaking New's! Lorem Ipsum is simply dummy text of the printing
+              and typesetting industry.
+            </h5>
+          </div>
+        ) : null}
         <Navbar
-          bg="dark"
           data-bs-theme="dark"
           collapseOnSelect
           expand="lg"
-          className="bg-body-tertiary d-block d-md-none text-white mx-3 px-2 mt-1 mb-0 py-0"
-          style={{ top: -15, backgroundColor: "#4c4c4c", borderRadius: "2px" }}
+          className=" d-block d-md-none text-white mx-3 px-2 mt-1 mb-0 py-0 rounded-1"
+          style={{
+            top: -15,
+            backgroundColor: "rgb(8, 11, 16)",
+            borderRadius: "2px",
+          }}
         >
           <Container className="py-3 justify-content-end">
             <Navbar.Toggle aria-controls="responsive-navbar-nav " />
@@ -248,33 +270,36 @@ export default function WebHeader() {
         </Navbar>
 
         {/* header News */}
-        <div
-          className="row text-center py-2 py-md-1 d-block d-md-none justify-self-center mx-3"
-          style={{
-            maxHeight: "5vh",
-            background: `rgb(0, 0, 0, 0.5)`,
-            color: "rgb(255, 219, 43)",
-            overflow: "hidden",
-            marginTop: -15,
-          }}
-        >
-          <h5
+        {!colorChange ? (
+          <div
+            className="row text-center py-2 py-md-1 d-block d-md-none justify-self-center mx-3"
             style={{
-              animation: `move 10s infinite linear`,
-              whiteSpace: "nowrap", // Prevent line breaks
+              maxHeight: "5vh",
+              background: `rgb(0, 0, 0, 0.5)`,
+              color: "rgb(255, 219, 43)",
+              overflow: "hidden",
+              marginTop: -15,
             }}
           >
-            Breaking New's! Lorem Ipsum is simply dummy text of the printing and
-            typesetting industry.
-          </h5>
-        </div>
+            <h5
+              style={{
+                animation: `move 10s infinite linear`,
+                whiteSpace: "nowrap", // Prevent line breaks
+              }}
+            >
+              Breaking New's! Lorem Ipsum is simply dummy text of the printing
+              and typesetting industry.
+            </h5>
+          </div>
+        ) : null}
       </div>
       <PrimaryModal
         open={isModalOpen}
         onCancel={handleCancel}
+        styles={{ minHeight: "95vh" }}
         Modalbody={
           <>
-            <SignIn />
+            <WebAuth />
           </>
         }
       />
