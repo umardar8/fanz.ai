@@ -40,6 +40,7 @@ const WeatherPanel = () => {
     if (error) return <div className='failed'>failed to load</div>;
     if (isValidating) return <div className="Loading">Loading...</div>;
 
+    // this is a test comment
     // convert API returned time-data into desired format.
     const format = (dateTime, type) => {
         const [date, time] = dateTime.split(" ");
