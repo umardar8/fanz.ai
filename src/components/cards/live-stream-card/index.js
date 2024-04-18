@@ -4,7 +4,7 @@ import { FaStar } from "react-icons/fa";
 import { IoMdHeart } from "react-icons/io";
 import { LuEye } from "react-icons/lu";
 
-const Tcards = (props) => {
+export default function LiveStreamCard() {
   return (
     <div className="px-3">
       <img
@@ -34,6 +34,4 @@ const Tcards = (props) => {
       </div>
     </div>
   );
-};
-
-export default Tcards;
+}

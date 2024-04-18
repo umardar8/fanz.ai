@@ -16,6 +16,8 @@ export default function PrimaryButton(props) {
     marginRight,
     padding,
     onClick,
+    btnWidth,
+    btnClassName,
   } = props;
 
   return (
@@ -32,6 +34,7 @@ export default function PrimaryButton(props) {
               fontSize: fontSize ? fontSize : `1rem`,
               marginRight: marginRight ? marginRight : "none",
               padding: padding ? padding : "auto",
+              width: btnWidth ? btnWidth : "auto",
             }
       }
       leftIcon={leftIcon}
@@ -40,6 +43,7 @@ export default function PrimaryButton(props) {
       colorScheme={colorScheme}
       size={size}
       onClick={onClick}
+      className={btnClassName}
     >
       {label}
     </Button>

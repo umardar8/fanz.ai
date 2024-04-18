@@ -6,8 +6,7 @@ import Shop from "../../pages/shop";
 import New from "../../pages/new";
 import Categories from "../../pages/categories";
 import LiveShow from "../../pages/live-show";
-import SignIn from "../../pages/auth/sign-in";
-import SignUp from "../../pages/auth/sign-up";
+import Auth from "../../pages/auth";
 
 export default function WebRoutes() {
   return (
@@ -21,8 +20,7 @@ export default function WebRoutes() {
           <Route path="/new" element={<New />} />
           <Route path="/categories" element={<Categories />} />
           <Route path="/live-show" element={<LiveShow />} />
-          <Route path="/sign-in" element={<SignIn />} />
-          <Route path="/sign-up" element={<SignUp />} />
+          <Route path="/auth" element={<Auth />} />
         </Routes>
       </Router>
     </>
