@@ -34,7 +34,7 @@ const WeatherPanel = () => {
         data: weather,
         error,
         isValidating,
-    } = useSWR(`${api.base}?key=${api.key}&q=${latitude},${longitude}&aqi=no`, fetcher);
+    } = useSWR(`${api.base}?key=${api.key}&q=${latitude},${longitude}&days=2&aqi=no&alerts=no`, fetcher);
 
     // Handles error and loading state
     if (error) return <div className='failed'>failed to load</div>;
@@ -49,6 +49,7 @@ const WeatherPanel = () => {
             var [h, m] = time.split(":");
             var H = h > 12 ? h - 12 : h;
             if (H == 0) { H = 12 }
+            if (H.length == 1) { H = "0" + H}
             var ampm = h > 11 ? " pm" : " am";
             var converted = H + ":" + cm + ampm;
         }
@@ -64,20 +65,24 @@ const WeatherPanel = () => {
         return converted;
     };
 
+    const checkError = () => {
+        var query = weather.forecast.forecastday[(1)].hour[(0)].temp_f;
+        console.log(query)
+    }
+
     const getIndex = (forecastNum, type) => {
         var [date, time] = weather.location.localtime.split(" ");
         var [hour, min] = time.split(":");
-        if (type == 'd') {
+        var currentHour = parseInt(hour);
+        if (type == 'd') {            
             if (forecastNum==1) { var index = (hour==23) ? 1 : 0; }
-            if (forecastNum==2) { var index = (hour==22) ? 1 : 0; }
-            if (forecastNum==3) { var index = (hour==21) ? 1 : 0; }
-            if (forecastNum==4) { var index = (hour==20) ? 1 : 0; }
+            if (forecastNum==2) { var index = (hour>=22) ? 1 : 0; }
+            if (forecastNum==3) { var index = (hour>=21) ? 1 : 0; }
+            if (forecastNum==4) { var index = (hour>=20) ? 1 : 0; }
         }
         if (type == 'h') {
-            if (forecastNum==1) { var index = (hour==23) ? 0 : parseInt(hour)+1 }
-            if (forecastNum==2) { var index = (hour==22) ? 0 : parseInt(hour)+2 }
-            if (forecastNum==3) { var index = (hour==21) ? 0 : parseInt(hour)+3 }
-            if (forecastNum==4) { var index = (hour==20) ? 0 : parseInt(hour)+4 }
+            var nextHour = (currentHour + forecastNum) % 24;
+            var index = nextHour < 0 ? 24 + nextHour : nextHour;
         }
         return index;
     }
@@ -94,8 +99,8 @@ const WeatherPanel = () => {
             <WeatherCard name={cityName} temp={current.temp_f} icon={current.condition.icon} date={format(weather.location.localtime, "d")} time={format(weather.location.localtime, "t")}/>
             <WeatherCard name={cityName} temp={forecast1.temp_f} icon={forecast1.condition.icon} date={format(forecast1.time, "d")} time={format(forecast1.time, "t")}/>
             <WeatherCard name={cityName} temp={forecast2.temp_f} icon={forecast2.condition.icon} date={format(forecast2.time, "d")} time={format(forecast2.time, "t")}/>
-            <WeatherCard name={cityName} temp={forecast3.temp_f} icon={forecast3.condition.icon} date={format(forecast3.time, "d")} time={format(forecast3.time, "t")}/>
-            <WeatherCard name={cityName} temp={forecast4.temp_f} icon={forecast4.condition.icon} date={format(forecast4.time, "d")} time={format(forecast4.time, "t")}/>
+            <WeatherCard name={cityName} temp={forecast3.temp_f} icon={forecast2.condition.icon} date={format(forecast3.time, "d")} time={format(forecast3.time, "t")}/>
+            <WeatherCard name={cityName} temp={forecast4.temp_f} icon={forecast2.condition.icon} date={format(forecast4.time, "d")} time={format(forecast4.time, "t")}/>
         </div>
     );
 };
