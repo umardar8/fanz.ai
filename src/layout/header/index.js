@@ -89,7 +89,7 @@ export default function WebHeader() {
               </Link>
               <Link
                 className="d-none d-md-block border-none headerItem headerItemDot"
-                to="/categories"
+                to="/web-dashboard"
                 style={Styles.headerItem}
               >
                 Categories

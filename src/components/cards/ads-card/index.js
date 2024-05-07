@@ -1,7 +1,8 @@
 import React from "react";
 import { ads } from "../../../assets";
 
-export default function AdsCard() {
+export default function AdsCard(props) {
+  const { btnClassName } = props;
   const addCard = {
     maxWidth: " 22vw",
     borderRadius: "20px",
@@ -16,7 +17,7 @@ export default function AdsCard() {
 
   return (
     <>
-      <div class="card adsCard" style={addCard}>
+      <div class={btnClassName ? btnClassName : "card adsCard"} style={addCard}>
         <div class="card-body">
           <div>
             <p style={{ textAlign: "right", color: "yellow" }}>ADS</p>

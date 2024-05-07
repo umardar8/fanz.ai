@@ -3,8 +3,10 @@ import useSWR from 'swr';
 import WeatherCard from '../cards/weather-card';
 import '../../App.css';
 
-const WeatherPanel = () => {
-
+const WeatherPanel = (props) => {
+    const {
+        btnClassName,
+      } = props;
     // location of user for use in API call.
     // const [location, setLocation] = useState({});
     const [latitude, setLatitude] = useState(0);
@@ -53,8 +55,7 @@ const WeatherPanel = () => {
     };
 
     return (
-        <div className='weatherPanel'>
-            <WeatherCard weather={weather1} time={formatTime(weather1)}/>
+        <div className={btnClassName ? btnClassName :'weatherPanel'} >
             <WeatherCard weather={weather1} time={formatTime(weather1)}/>
             <WeatherCard weather={weather1} time={formatTime(weather1)}/>
             <WeatherCard weather={weather1} time={formatTime(weather1)}/>

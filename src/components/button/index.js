@@ -42,8 +42,8 @@ export default function PrimaryButton(props) {
       variant={variant}
       colorScheme={colorScheme}
       size={size}
-      onClick={onClick}
       className={btnClassName}
+      onClick={onClick} // Pass onClick prop to Button component
     >
       {label}
     </Button>

@@ -2,7 +2,8 @@ import React from "react";
 import { IoArrowForwardCircleOutline } from "react-icons/io5";
 import { mi } from "../../../assets";
 
-export default function PriceListCard() {
+export default function PriceListCard(props) {
+  const { btnClassName } = props;
   return (
     <>
       <div
@@ -14,6 +15,7 @@ export default function PriceListCard() {
           justifyContent: "center",
           alignItems: "center",
         }}
+        className={btnClassName}
       >
         <div
           style={{

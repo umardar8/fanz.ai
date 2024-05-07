@@ -1,13 +1,15 @@
 import "./App.css";
 import WebRoutes from "./config/web-routes";
+import Store from "./config/redux/store";
 import { ChakraProvider } from "@chakra-ui/react";
+import { Provider } from "react-redux";
 
 function App() {
   return (
     <ChakraProvider>
-      {/* <div className="App"> */}
-      <WebRoutes />
-      {/* </div> */}
+      <Provider store={Store}>
+        <WebRoutes />
+      </Provider>
     </ChakraProvider>
   );
 }
